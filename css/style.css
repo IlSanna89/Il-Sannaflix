@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: fantasy;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #333;
+}
+.logo #logo {
+    width: 150px;
+}
+.logo .logo-mobile {
+    width: 50px;
+    padding: 7px 0;
+    display: none;
+}
+#search {
+    width: 70%;
+    border-radius: 10px;
+    border: none;
+    padding: 2px 8px;
+}
+#search-btn {
+    font-weight: bold;
+    font-family: sans-serif;
+    color: red;
+    border-radius: 8px;
+    border: 2px solid antiquewhite;
+    padding: 2px;
+    margin-left: 7px;
+}
+#search-btn:hover {
+    background-color: red;
+    color: antiquewhite;
+    border: 2px solid antiquewhite;
+}
+main {
+    width: 90%;
+    margin: auto;
+    margin-top: 65px;
+    padding: 50px 0;
+}
+.risultati {
+    text-align: center;
+    font-size: 35px;
+    color: #333;
+    display: none;
+}
+.not-found-film, .not-found-series {
+    text-align: center;
+    display: none;
+    padding: 20px;
+}
+#list-film, #list-series {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.movies, .series {
+    position: relative;
+    width: calc(20% - 10px);
+    text-align: center;
+    color: #333;
+    margin: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0px 1px 10px #333;
+    border-radius: 10px;
+}
+.movies img, .series img {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+}
+.movies .fa-info-circle, .series .fa-info-circle {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: #fff;
+    display: none;
+}
+.movies:hover .fa-info-circle {
+    display: block;
+    cursor: pointer;
+}
+
+.series:hover .fa-info-circle {
+    display: block;
+    cursor: pointer;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    background-color: #333;
+    color: antiquewhite;
+    overflow-y: scroll;
+    opacity: .8;
+    padding: 25px 5px;
+    border-radius: 10px;
+    display: none;
+}
+.info p {
+    padding-bottom: 10px;
+}
+.info .fa-times-circle {
+    position: absolute;
+    top: 5px;
+    left: 87%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .movies, .series {
+        width: calc(25% - 10px);
+    }
+}
+@media screen and (max-width: 768px) {
+    .movies, .series {
+        width: calc(33% - 10px);
+    }
+}
+@media screen and (max-width: 600px) {
+    .movies, .series {
+        width: calc(50% - 10px);
+    }
+}
+@media screen and (max-width: 450px) {
+    .logo .logo-mobile {
+        display: block;
+    }
+    .logo #logo {
+        display: none;
+    }
+    
+    #search {
+        width: 50%;
+        margin-left: 30px;
+    }
+    .movies, .series {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}

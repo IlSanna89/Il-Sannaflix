@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <title>Il Sannaflix Video +</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img id="logo" src="img/logo_small.png" alt="Logo">
+                <img src="img/logo_small_icon_only_inverted.png" alt="" class="logo-mobile">
+            </div>
+            <div class="search">
+                <input id="search" type="text" placeholder="Cerca un film">
+                <input id="search-btn" type="button" value="Search">
+            </div>
+        </header>
+        <main>
+            <h2 class="risultati">Risultati della ricerca per "<span class="result"></span>" in Film</h2>
+            <div class="not-found-film">
+                <img src="img/not-found.jpg" alt="">
+            </div>
+           <ul id="list-film">
+
+           </ul>
+
+           <h2 class="risultati">Risultati della ricerca per "<span class="result"></span>" in Serie TV</h2>
+           <div class="not-found-series">
+                <img src="img/not-found.jpg" alt="">
+            </div>
+           <ul id="list-series">
+                
+            </ul>
+        </main>
+
+
+        <script id="movies-template" type="text/x-handlebars-template">
+            <li class="movies">
+                <img src="{{poster_path}}" alt="">
+                <h3>{{title}}</h3>
+                <h5>{{original_title}}</h5>
+                <i class="fas fa-info-circle"></i>
+                <div class="info">
+                    <p>Data d'uscita: {{release_date}}</p>
+                    <p>Lingua Originale: {{original_language}}</p>
+                    <p>Voto: {{vote_average}}/10</p>
+                    <p>{{overview}}</p>
+                    <i class="far fa-times-circle"></i>
+                </div>
+            </li>
+          </script>
+
+          <script id="series-template" type="text/x-handlebars-template">
+            <li class="series">
+                <img src="{{poster_path}}" alt="">
+                <h3>{{name}}</h3>
+                <h5>{{original_name}}</h5>
+                <i class="fas fa-info-circle"></i>
+                <div class="info">
+                    <p>Data d'uscita: {{release_date}}</p>
+                    <p>Lingua Originale: {{original_language}}</p>
+                    <p>Voto: {{vote_average}}/10</p>
+                    <p>{{overview}}</p>
+                    <i class="far fa-times-circle"></i>
+                </div>
+            </li>
+          </script>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
